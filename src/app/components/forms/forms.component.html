@@ -1,0 +1,130 @@
+<div class="center-content">
+  <mat-card class="example-card">
+    <mat-card-header>
+
+      <div mat-card-avatar>
+        <mat-icon> person_pin</mat-icon>
+      </div>
+      <mat-card-title>Registro de Usuario</mat-card-title>
+      <mat-card-subtitle>Alta al sistema</mat-card-subtitle>
+    </mat-card-header>
+
+
+
+
+
+    <mat-card-content>
+      <p>
+        <!--
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+    
+    
+          <p>
+            <mat-form-field appearance="legacy">
+              <mat-label>Apellido</mat-label>
+              <input matInput placeholder="Solo el Apellido" name="Apelido">
+              <mat-icon matSuffix>favorite</mat-icon>
+              <mat-hint>Tu apellido</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="legacy">
+              <mat-label>Nombre</mat-label>
+              <input matInput placeholder="Solo Nombres" name="Nombre">
+              <mat-icon matSuffix>home</mat-icon>
+              <mat-hint>Tu Nombre!</mat-hint>
+            </mat-form-field>
+          </p>
+    
+    
+          
+      </mat-form-field>
+      
+        <app-paises></app-paises>
+        <app-button></app-button>
+        <button type="submit">Confirmar</button>
+
+
+
+      </form>
+    -->
+
+      <form [formGroup]="formularioContacto" (ngSubmit)="submit()">
+        <mat-form-field appearance="legacy">
+          <p>Nombre:
+            <input type="text" formControlName="nombre" required>
+            <span *ngIf="this.formularioContacto.get('nombre')?.errors?.['required']">
+              (El nombre no puede quedar vacío)
+            </span>
+            <span *ngIf="this.formularioContacto.get('nombre')?.errors?.['minlength']">
+              (Debe tener como mínimo 10 caracteres)
+            </span>
+          </p>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+          <p>Apellido
+            <input type="text" formControlName="apellido" required>
+            <span *ngIf="this.formularioContacto.get('apellido')?.errors?.['required']">
+              (El nombre no puede quedar vacío)
+            </span>
+            <span *ngIf="this.formularioContacto.get('apellido')?.errors?.['minlength']">
+              (Debe tener como mínimo 10 caracteres)
+            </span>
+          </p>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+          <p>Mail:
+            <input type="text" formControlName="mail">
+            <span *ngIf="this.formularioContacto.get('mail')?.errors?.['required']">
+              (El mail no puede quedar vacío)
+            </span>
+            <span *ngIf="this.formularioContacto.get('mail')?.errors?.['email']">
+              (El mail no es válido)
+            </span>
+          </p>
+        </mat-form-field>
+          <br>
+        <button type="submit">Confirmar</button>
+        
+      </form>
+     
+
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- le agrego el menu de tres puntitos-->
+      <!--
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+    <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+      
+      
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voice mail</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+          </button>
+        </mat-menu>
+      -->
+
+
+    </mat-card-actions>
+    
+  <div>Resultado {{resultado}}</div>
+  </mat-card>
+
+
+
+
+</div>

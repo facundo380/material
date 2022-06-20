@@ -1,0 +1,14 @@
+<h4>Seleccione el Pais</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Pais de Residencia</mat-label>
+  <mat-select >
+    <mat-option *ngFor="let paises of paises" [value]="paises.id">
+      {{paises.nombre}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+
+
+
